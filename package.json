@@ -1,0 +1,30 @@
+{
+  "name": "basic-blog-api",
+  "version": "1.0.0",
+  "description": "A fully-featured and production-grade Blog API built with Node.js, Express, and MongoDB.  This project focuses on backend fundamentals and best practices in API development, including proper file structuring, authentication, error handling, and modular design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "type" : "module"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AryanSingh2006/Basic-Blog-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AryanSingh2006/Basic-Blog-API/issues"
+  },
+  "homepage": "https://github.com/AryanSingh2006/Basic-Blog-API#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2",
+    "nodemon": "^3.1.9"
+  }
+}
