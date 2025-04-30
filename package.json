@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "A fully-featured and production-grade Blog API built with Node.js, Express, and MongoDB.  This project focuses on backend fundamentals and best practices in API development, including proper file structuring, authentication, error handling, and modular design.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
+    "start": "nodemon server.js",
     "type": "module",
     "prepare": "husky install"
-    
   },
   "repository": {
     "type": "git",

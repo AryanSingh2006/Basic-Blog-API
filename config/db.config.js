@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 const connectMongoDB = () => {
   return mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
-  console.log("✅ Connected!");
+  console.log("✅ DataBase is connected Connected!");
 })
 .catch((err) => {
   console.log(err);
