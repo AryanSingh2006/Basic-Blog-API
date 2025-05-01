@@ -1,3 +1,5 @@
-import userModel from "../models/user.model.js";
+const getUser = (req,res) => {
+  res.send('hello world');
+};
 
-const register = async 
+export default getUser;
