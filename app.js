@@ -1,9 +1,11 @@
 import express from "express";
-import userRoutes from "./routes/register.routes.js"
+import registerRoutes from './routes/register.routes.js'
 
 const app = express();
 
-app.use('/user',userRoutes);
+app.use(express.json())
+app.use(express.urlencoded({ extended: true}));
+app.use('/user',registerRoutes);
 
 
 

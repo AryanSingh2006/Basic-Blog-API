@@ -9,7 +9,6 @@ connectMongoDB()
   .then(()=>{
     app.listen(PORT,()=> {
       console.log(`Server is live on http://localhost:${PORT}`)
-      console.log(`➡️ Try accessing: http://localhost:${PORT}/user`);
     })
   })
   .catch((err)=>{

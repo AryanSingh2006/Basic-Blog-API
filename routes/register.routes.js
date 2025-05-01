@@ -1,8 +1,9 @@
-import express from "express";
-import getUser from "../controllers/register.controller.js";
+import express from 'express';
+import registerUser from '../controllers/register.controller.js';
+import upload from '../middleware/multer.middleware.js';
 
 const router = express.Router();
 
-router.get('/',getUser);
+router.post('/register', upload.none() ,registerUser);
 
-export default router;
+export default router
