@@ -1,5 +1,9 @@
 import userModel from "../models/user.model.js";
 
+const renderLoginPage = (req, res) => {
+  res.render('loginPage');
+};
+
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
 
@@ -47,4 +51,7 @@ const loginUser = async (req, res) => {
   }
 };
 
-export default loginUser;
+export default {
+  renderLoginPage,
+  loginUser
+}
