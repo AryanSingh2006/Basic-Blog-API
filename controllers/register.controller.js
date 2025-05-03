@@ -1,5 +1,9 @@
 import userModel from '../models/user.model.js'
 
+const renderRegisterPage = (req,res) =>{
+   res.render('registerPage')
+}
+
 const registerUser = async (req,res) => {
    const { email, username, password} = req.body
    if ( !username || !password || !email){
@@ -33,6 +37,10 @@ const registerUser = async (req,res) => {
          error: err.message
       })
    }
+   res.redirect('/login')
 };
 
-export default registerUser;
+export default {
+   renderRegisterPage,
+   registerUser
+};
