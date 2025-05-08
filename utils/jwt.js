@@ -1,8 +1,8 @@
-import jwt, { verify } from "jsonwebtoken";
-import { JWT_EXPIRY, JWT_SECRET } from "../constants";
+import jwt from "jsonwebtoken";
+import { JWT_EXPIRY, JWT_SECRET } from "../constants.js";
 
 const generateToken = (payload) => {
-  const token = jwt.sign(payload, JWT_SECRET,{expiresIn: JWT_EXPIRY})
+  return jwt.sign(payload, JWT_SECRET,{expiresIn: JWT_EXPIRY});
 }
 
 const verifyToken = (token) => {
