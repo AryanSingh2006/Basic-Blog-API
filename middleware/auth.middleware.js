@@ -11,9 +11,11 @@ const authMiddleware = (req,res,next) => {
   }
 
   try{
-    const decoded = jwtUtil.verifyToken(token);
+    const decoded = jwtUtil.verifyAccessToken(token);
 
     req.user = decoded;
+
+    next();
   }
   catch(err){
     res.status(401).json({
