@@ -1,4 +1,6 @@
 import userModel from "../models/user.model.js";
+import jwtUtil from "../utils/jwt.js";
+import { NODE_ENV  } from "../constants.js";
 
 const renderLoginPage = (req, res) => {
   res.render('loginPage');
@@ -33,20 +35,31 @@ const loginUser = async (req, res) => {
       });
     }
 
-    res.status(200).json({
-      success: true,
-      message: "Login successful",
-      user: {
-        username: user.username,
-        email: user.email
-      }
+    const token = jwtUtil.generateAccessToken ({id : user._id, email : user.email});
+    const refreshToken = jwtUtil.generateRefreshToken ({id : user._id, email : user.email});
+
+    //saving refresh token in the db
+    user.refreshToken = refreshToken;
+    await user.save();
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: NODE_ENV  === "production",
+      sameSite: "Strict",
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
     });
 
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      secure: NODE_ENV === "production",
+      sameSite: "Strict",
+      maxAge: 7 * 24 * 60 * 60 * 1000
+    })
+    return res.redirect("/dashboard");
+
   } catch (err) {
-    res.status(500).json({
-      success: false,
-      message: "Something went wrong",
-      error: err.message,
+    res.status(500).render("loginPage", {
+      error: "Something went wrong",
     });
   }
 };
