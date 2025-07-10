@@ -48,7 +48,7 @@ const registerUser = async (req, res) => {
       maxAge: 7 * 24 * 60 * 60 * 1000
     });
 
-    return res.redirect('/dashboard');
+    return res.redirect('/homePage');
   } catch (err) {
     res.status(500).render("registerPage", {
       error: "Something went wrong. Please try again."
