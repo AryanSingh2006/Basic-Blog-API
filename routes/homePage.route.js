@@ -1,9 +1,9 @@
 import express from "express";
-import renderdashboardPage from "../controllers/dashboard.controller.js";
+import renderHomePage from "../controllers/homePage.controller.js";
 import authMiddleware from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
-router.get('/dashboard', authMiddleware, renderdashboardPage);
+router.get('/homePage', authMiddleware, renderHomePage);
 
 export default router;
