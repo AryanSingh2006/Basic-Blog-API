@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage - Your Blog</title>
+  <link rel="stylesheet" href="/css/homepage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="header-content">
+        <h1 class="page-title">Blog Homepage</h1>
+        <p class="page-subtitle">Discover amazing stories and insights from our community</p>
+      </div>
+      
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <a href="/createBlog" class="btn btn-primary">
+          <span class="btn-icon">✍️</span>
+          Create Blog
+        </a>
+        <a href="/profilePage" class="btn btn-secondary">
+          <span class="btn-icon">👤</span>
+          Profile
+        </a>
+        <a href="/logout" class="btn btn-logout">
+          <span class="btn-icon">🚪</span>
+          Logout
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <% if (blogs.length == 0) { %>
+        <div class="empty-state">
+          <div class="empty-icon">📝</div>
+          <h2>No Blogs Available</h2>
+          <p>Be the first to share your thoughts with the community!</p>
+          <a href="/createBlog" class="btn btn-primary">Write Your First Blog</a>
+        </div>
+      <% } else { %>
+        <div class="blogs-grid">
+          <% for( let i = 0; i < blogs.length; i++ ) { %>
+            <article class="blog-card">
+              <div class="blog-content">
+                <h3 class="blog-title">
+                  <a href="/blogs/<%= blogs[i]._id %>"><%= blogs[i].title %></a>
+                </h3>
+                <div class="blog-meta">
+                  <span class="author-info">
+                    <span class="author-icon">👤</span>
+                    By: <strong><%= blogs[i].author.username %></strong>
+                  </span>
+                </div>
+              </div>
+              <div class="blog-actions">
+                <a href="/blogs/<%= blogs[i]._id %>" class="read-more">
+                  Read More
+                  <span class="arrow">→</span>
+                </a>
+              </div>
+            </article>
+          <% } %>
+        </div>
+      <% } %>
+    </main>
+  </div>
+</body>
+</html>
