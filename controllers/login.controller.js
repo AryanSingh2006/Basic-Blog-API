@@ -55,7 +55,7 @@ const loginUser = async (req, res) => {
       sameSite: "Strict",
       maxAge: 7 * 24 * 60 * 60 * 1000
     })
-    return res.redirect("/dashboard");
+    return res.redirect("/homePage");
 
   } catch (err) {
     res.status(500).render("loginPage", {
