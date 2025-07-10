@@ -2,8 +2,7 @@ import 'dotenv/config';
 import mongoose from "mongoose";
 import connectMongoDB from "./config/db.config.js";
 import app from "./app.js"
-
-const PORT = process.env.PORT || 3000;
+import { PORT } from './constants.js';
 
 connectMongoDB()
   .then(()=>{
