@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= blog.title %> - Your Blog</title>
+  <link rel="stylesheet" href="/css/detailedBlog.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation Header -->
+    <header class="nav-header">
+      <a href="/homePage" class="back-btn">
+        <span class="back-icon">←</span>
+        Back to Homepage
+      </a>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="blog-container">
+      <article class="blog-article">
+        <!-- Blog Header -->
+        <header class="blog-header">
+          <h1 class="blog-title"><%= blog.title %></h1>
+          <div class="blog-meta">
+            <div class="author-info">
+              <span class="author-icon">👤</span>
+              <span class="author-text">
+                Written by <strong><%= blog.author.username %></strong>
+              </span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Blog Content -->
+        <div class="blog-content">
+          <div class="content-wrapper">
+            <p><%= blog.content %></p>
+          </div>
+        </div>
+
+        <!-- Blog Footer -->
+        <footer class="blog-footer">
+          <div class="footer-actions">
+            <a href="/homePage" class="btn btn-primary">
+              <span class="btn-icon">🏠</span>
+              Back to Homepage
+            </a>
+          </div>
+        </footer>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
