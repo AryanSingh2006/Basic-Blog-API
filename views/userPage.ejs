@@ -3,13 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>userPage</title>
+  <title>Welcome - Your Blog</title>
+  <link rel="stylesheet" href="/css/userPage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>userPage</h1>
-  <form>
-    <a href="/register"><input type="button" value="Register"></a>
-    <a href="/login"><input type="button" value="Login">
-  </form>
+  <div class="container">
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">Welcome to Your Blog</h1>
+        <p class="hero-subtitle">Share your thoughts, connect with readers, and build your digital presence</p>
+        
+        <div class="auth-buttons">
+          <a href="/register" class="btn btn-primary">
+            Get Started
+          </a>
+          <a href="/login" class="btn btn-secondary">
+            Sign In
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✍️</div>
+        <h3>Write & Publish</h3>
+        <p>Create beautiful blog posts with our intuitive editor</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌟</div>
+        <h3>Build Your Audience</h3>
+        <p>Connect with readers and grow your community</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Track Performance</h3>
+        <p>Monitor your blog's growth with detailed analytics</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
