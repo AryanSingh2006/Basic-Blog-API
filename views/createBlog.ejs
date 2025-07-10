@@ -3,13 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Create Blog - Your Blog</title>
+  <link rel="stylesheet" href="/css/createBlog.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <form action="/create", method="post">
-    Title:<input type="text" name="title"><br>
-    Content:<input type="text" name="content"><br>
-    <button type="submit">Publish</button>
-  </form>
+  <div class="container">
+    <!-- Header Section -->
+    <header class="page-header">
+      <div class="header-content">
+        <h1 class="page-title">Create New Blog</h1>
+        <p class="page-subtitle">Share your thoughts and ideas with the world</p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="form-container">
+        <form action="/create" method="post" class="blog-form">
+          <div class="form-group">
+            <label for="title" class="form-label">
+              <span class="label-icon">📝</span>
+              Title
+            </label>
+            <input type="text" name="title" id="title" class="form-input" placeholder="Enter your blog title..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="content" class="form-label">
+              <span class="label-icon">✍️</span>
+              Content
+            </label>
+            <textarea name="content" id="content" class="form-textarea" placeholder="Write your blog content here..." rows="10" required></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <span class="btn-icon">🚀</span>
+              Publish Blog
+            </button>
+            <a href="/homePage" class="btn btn-secondary">
+              <span class="btn-icon">🏠</span>
+              Back to Home
+            </a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
