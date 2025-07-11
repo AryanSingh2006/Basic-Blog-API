@@ -1,2 +1,41 @@
-# Basic-Blog-Site
-A fully-featured and production-grade Blog API built with Node.js, Express, and MongoDB.  This project focuses on backend fundamentals and best practices in API development, including proper file structuring, authentication, error handling, and modular design.
+# 📝 Basic Blog Site
+
+A fully functional blog web application built with **Node.js**, **Express**, **MongoDB**, and **EJS** where users can:
+
+- Register & log in securely
+- Create, view, edit, and delete their blog posts
+- View detailed blog content
+- Manage their profile and blog entries
+- Logout and securely handle session/authentication via JWT & cookies
+
+🔗 **Live Demo**: [Visit the deployed app on Render](https://basic-blog-site.onrender.com)
+
+---
+
+## 🚀 Features
+
+- 🔐 User authentication with JWT (access + refresh token)
+- 📄 Create & manage blogs
+- 🧑‍💻 Author-specific dashboard and profile page
+- ✏️ Edit and delete blog posts from your profile
+- 👁 View detailed blogs with unique IDs
+- 💅 Basic CSS styling across pages
+- 🧠 Protected routes and middleware-based authentication
+- 🍪 Secure cookie management (with `httpOnly` cookies)
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology       | Purpose                                 |
+|------------------|------------------------------------------|
+| Node.js + Express| Backend server and API routing           |
+| MongoDB + Mongoose| Database and schema modeling            |
+| EJS              | Templating engine for dynamic HTML       |
+| bcrypt           | Password hashing for secure authentication|
+| JSON Web Token (JWT)| User session management               |
+| dotenv           | Manage environment variables             |
+| cookie-parser    | Read cookies from client requests        |
+| Render           | Deployment platform                      |
+
+---
