@@ -39,3 +39,16 @@ A fully functional blog web application built with **Node.js**, **Express**, **M
 | Render           | Deployment platform                      |
 
 ---
+
+## 📦 Environment Variables Setup
+
+To run this project locally, create a `.env` file in the root directory based on the following structure:
+
+```env
+PORT=5000
+MONGODB_URL=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+JWT_EXPIRY=15m
+JWT_REFRESH_SECRET=your_refresh_jwt_secret
+JWT_REFRESH_EXPIRY=7d
+NODE_ENV=development
